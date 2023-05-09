@@ -2,22 +2,28 @@
 
 CleverTerm is a prototype project that utilizes a LSTM model trained on bash history to suggest the next word in a command line interface. The project is unreleased and is currently in its alpha version.
 
-## Model
+## Model Summary
 
-The model used for CleverTerm is a sequential model with the following layers:
 ```
-Layer (type)                Output Shape              Param #   
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
 =================================================================
-embedding (Embedding)       (None, None, 14)          347858    
+ embedding (Embedding)       (None, None, 14)          347858    
                                                                  
-lstm (LSTM)                 (None, None, 100)         46000     
+ lstm (LSTM)                 (None, None, 100)         46000     
                                                                  
-lstm_1 (LSTM)               (None, 100)               80400     
+ lstm_1 (LSTM)               (None, 100)               80400     
                                                                  
-dense (Dense)               (None, 100)               10100     
+ dense (Dense)               (None, 100)               10100     
                                                                  
-dense_1 (Dense)             (None, 24847)             2509547   
+ dense_1 (Dense)             (None, 24847)             2509547   
                                                                  
+=================================================================
+Total params: 2,993,905
+Trainable params: 2,993,905
+Non-trainable params: 0
+_________________________________________________________________                                                                 
 ```
 The model was trained using TensorFlow and has a total of 2,993,905 parameters, all of which are trainable.
 
